@@ -3,7 +3,7 @@
     <a href="https://appwrite.io" target="_blank"><img width="260" height="39" src="https://appwrite.io/images/appwrite.svg" alt="Appwrite Logo"></a>
     <br />
     <br />
-    <b>End-to-end backend server</b> for <em>Web</em>🌐, <em>Mobile</em>📱, <em>Native</em>🖥, or <em>Backend</em>💽 apps packaged as a set of <b>Docker</b> microservices🎁  
+    <b>End-to-end backend server for Web, Mobile, Native, or Backend apps packaged as a set of Docker microservices</b>
     <br />
     <br />
     <a href="https://github.com/appwrite/appwrite">
