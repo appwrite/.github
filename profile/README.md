@@ -7,7 +7,7 @@
     <br />
     <br />
     <a href="https://github.com/appwrite/appwrite">
-        <img width="800" height=auto src="https://user-images.githubusercontent.com/31401437/180830999-60710c6c-0d6b-4add-9f12-06a04f482661.jpg" alt="Visit the Appwrite repo">
+        <img width="800" height=auto src="https://raw.githubusercontent.com/appwrite/appwrite/master/public/images/github.png" alt="Visit the Appwrite repo">
     </a>
 </p>
 
