@@ -37,6 +37,7 @@ body:
       label: "🎲 Appwrite version"
       description: "What version of Appwrite are you running?"
       options:
+        - Version 1.0.x
         - Version 0.15.x
         - Version 0.14.x
         - Version 0.13.x
@@ -68,7 +69,7 @@ body:
       required: false
     attributes:
       label: "🧱 Your Environment"
-      description: "Is your environment customized in any way?"
+      description: "What exact version of Appwrite? What Appwrite SDK and version are you using? Is your environment customized in any way?"
       placeholder: "I use Cloudflare for ..."
   - type: checkboxes
     id: no-duplicate-issues
