@@ -1,10 +1,10 @@
 # Contributing
 
-We would ❤️ for you to contribute to Appwrite and help make it better! We want contributing to Appwrite to be fun, enjoyable, and educational for anyone and everyone. All contributions are welcome, including issues, new docs as well as updates and tweaks, blog posts, workshops, and more.
+We would ❤️ for you to contribute to Appwrite and help make it better! We want contributing to Appwrite to be fun, enjoyable, and educational for anyone and everyone. All contributions, including issues, new docs, updated docs, blog posts, workshops, and more, are welcome.
 
 ## How to Start?
 
-If you are worried or don’t know where to start, check out our next section explaining what kind of help is needed and where you can get involved. You can reach out with questions on our [Discord](https://discord.gg/GSeTUeA) server. You can also submit an issue and a maintainer can guide you!
+If you are worried or need help figuring out where to start, check out our next section explaining what kind of help is needed and where you can get involved. You can reach out with questions on our [Discord](https://discord.gg/GSeTUeA) server. You can also submit an issue, and a maintainer can guide you!
 
 ## Code of Conduct
 
@@ -12,7 +12,7 @@ Help us keep Appwrite open and inclusive. Please read and follow our [Code of Co
 
 ## Submit a Pull Request 🚀
 
-Branch naming convention is as follows
+Our branch naming convention is as follows:
 
 `TYPE-ISSUE_ID-DESCRIPTION`
 
@@ -22,7 +22,7 @@ example:
 doc-548-submit-a-pull-request-section-to-contribution-guide
 ```
 
-When `TYPE` can be:
+Where `TYPE` can be:
 
 - **feat** - is a new feature
 - **doc** - documentation only changes
@@ -30,11 +30,11 @@ When `TYPE` can be:
 - **fix** - a bug fix
 - **refactor** - code change that neither fixes a bug nor adds a feature
 
-**All PRs must include a commit message with the description of the changes made!**
+**All PRs must include a commit message describing the changes made!**
 
 Start by forking the project and use the `git clone` command to download the repository to your computer. A standard procedure for working on an issue would be to:
 
-1. Before creating a new branch, pull the changes from upstream to make sure your default branch is be up to date.
+1. Before creating a new branch, pull the changes from upstream to ensure your default branch is up to date.
 
 ```
 $ git pull
@@ -56,12 +56,12 @@ $ git push origin [name_of_your_new_branch]
 6. Submit your changes for review. If you go to your repository on GitHub, you'll see a `Compare & pull request` button. Click on that button.
 7. Start a Pull Request (PR) by clicking on `Create pull request`. Make sure to update the PR description following the template provided.
 8. Wait for a code review.
-9. If you need to make changes based on feedback, make sure to re-request a review from your reviewer after you've made the necessary changes.
+9. If you need to make changes based on feedback, re-request your reviewer's review after you've made the necessary changes.
 
 ![Re-Request a Review](https://docs.github.com/assets/cb-4714/images/help/pull_requests/request-re-review.png)
 
-10. After approval, your PR will be merged.
-11. You can delete your branch after it has been merged.
+10. After approval, a maintainer will merge your PR.
+11. After a maintainer merges your PR, you may delete your 
 
 ## Introducing New Features
 
@@ -69,9 +69,9 @@ We would 💖 you to contribute to Appwrite, but we would also like to make sure
 
 For us to find the right balance, please open an issue explaining your ideas before introducing a new pull request.
 
-This will allow the Appwrite community to have sufficient discussion about the new feature value and how it fits in the product roadmap and vision.
+An issue will allow the Appwrite community to thoroughly discuss the new feature and how it fits into the product roadmap and vision.
 
-This is also important for Appwrite maintainers to discuss the feature's design and architecture to help the contribution fit in organically in the Appwrite codebase. Some bigger features might need to go through our [RFC process](https://github.com/appwrite/rfc).
+An issue is also essential for Appwrite maintainers to discuss the feature's design and architecture to help the contribution fit in organically in the Appwrite codebase. Some more extensive features might need to go through our [RFC process](https://github.com/appwrite/rfc).
 
 ## Other Ways to Help
 
@@ -79,20 +79,20 @@ Pull requests are great, but there are many other areas where you can help Appwr
 
 ### Blogging & Speaking
 
-Blogging, speaking about, or creating tutorials about one of Appwrite’s many features. Mention [@appwrite](https://twitter.com/appwrite) on Twitter and/or email [team@appwrite.io](mailto:team@appwrite.io) so we can give pointers and tips and help you spread the word by promoting your content on the different Appwrite communication channels. Please add your blog posts and videos of talks to our [Awesome Appwrite](https://github.com/appwrite/awesome-appwrite) repo on GitHub.
+When blogging, speaking about, or creating tutorials about one of Appwrite's many features, mention [@appwrite](https://twitter.com/appwrite) on Twitter and/or email [team@appwrite.io](mailto:team@appwrite.io) so we can give pointers and tips and help you spread the word by promoting your content on the different Appwrite communication channels. Please add your blog posts and videos of talks to our [Awesome Appwrite](https://github.com/appwrite/awesome-appwrite) repo on GitHub.
 
 ### Presenting at Meetups
 
-Presenting at meetups and conferences about your Appwrite projects. Your unique challenges and successes in building things with Appwrite can provide great speaking material. We’d love to review your talk abstract/CFP, so get in touch with us if you’d like some help!
+Your unique challenges and successes in building things with Appwrite can provide great speaking material. We’d love to review your talk abstract/CFP, so contact us if you’d like some help!
 
 ### Sending Feedbacks & Reporting Bugs
 
-Sending feedback is a great way for us to understand your different use cases of Appwrite better. If you had any issues, bugs, or want to share about your experience, feel free to do so on our GitHub issues page or at our [Discord channel](https://discord.gg/GSeTUeA).
+Sending feedback is an excellent way for us to understand different use cases for Appwrite. If you have any issues or want to share your experience, feel free to do so on our GitHub issues page or our [Discord channel](https://discord.gg/GSeTUeA).
 
 ### Improving Documentation
 
-Submitting documentation updates, enhancements, designs, or bug fixes. Spelling or grammar fixes will be very much appreciated.
+Submitting documentation updates, enhancements, designs, or bug fixes will be very much appreciated.
 
 ### Helping Someone
 
-Searching for Appwrite on Discord, GitHub, or StackOverflow and helping someone else who needs help. You can also help by teaching others how to contribute to Appwrite's repo!
+Help someone on Discord, GitHub, or StackOverflow. You can also help by teaching others how to contribute to Appwrite's repo!
