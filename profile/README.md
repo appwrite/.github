@@ -3,7 +3,7 @@
     <a href="https://appwrite.io" target="_blank"><img width="260" height="39" src="https://appwrite.io/images/appwrite.svg" alt="Appwrite Logo"></a>
     <br />
     <br />
-    <b>End-to-end backend server for Web, Mobile, Native, or Backend apps packaged as a set of Docker microservices</b>
+    <b>Appwrite is a backend platform for developing Web, Mobile, and Flutter applications. Built with the open source community and optimized for developer experience in the coding languages you love.</b>
     <br />
     <br />
     <a href="https://github.com/appwrite/appwrite"><img width="800" height=auto src="https://raw.githubusercontent.com/appwrite/appwrite/master/public/images/github.png" alt="Visit the Appwrite repo"></a>
