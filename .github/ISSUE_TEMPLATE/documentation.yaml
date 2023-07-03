@@ -19,7 +19,7 @@ body:
     id: no-duplicate-issues
     attributes:
       label: "👀 Have you spent some time to check if this issue has been raised before?"
-      description: "Have you Googled for a similar issue or checked our older issues for a similar bug?"
+      description: "Have you Googled for a similar issue or checked our older issues for a similar documentation request?"
       options:
         - label: "I checked and didn't find similar issue"
           required: true
