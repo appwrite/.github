@@ -27,3 +27,4 @@
     <li>Have your community event sponsored via the <a href="https://dev.to/appwrite/appwrite-announces-pizza-and-swag-fund-200m">Appwrite Pizza and Swag Fund 🍕</li>
     <li>Apply to Appwrite through the <a href="https://appwrite.io/company/careers">Appwrite Careers page (We're HIRING!)</a> 🧑‍💻</li>
 </ul>
+
