@@ -1,12 +1,9 @@
 <br />
 <p align="center">
-    <a href="https://appwrite.io" target="_blank"><img width="260" height="39" src="https://appwrite.io/images/logos/appwrite-light.svg" alt="Appwrite Logo"></a>
+    <a href="https://appwrite.io" target="_blank"><img src="./images/banner.png" alt="Appwrite Banner"></a>
     <br />
     <br />
     <b>Appwrite is a backend platform for developing Web, Mobile, and Flutter applications. Built with the open source community and optimized for developer experience in the coding languages you love.</b>
-    <br />
-    <br />
-    <a href="https://github.com/appwrite/appwrite"><img width="800" height=auto src="https://raw.githubusercontent.com/appwrite/appwrite/master/public/images/github.png" alt="Visit the Appwrite repo"></a>
 </p>
 
 <h2>Learn About Appwrite 🧑‍🎓</h2>
@@ -17,6 +14,9 @@
     <li>View our livestreams and video content at the <a href="https://youtube.com/c/Appwrite">Appwrite YouTube channel</a> 📺</li>
     <li>Discover our community-made projects at the <a href="https://github.com/appwrite/awesome-appwrite">Awesome Appwrite repo</a> 💻</li>
 </ul>
+
+<br />
+<a href="https://github.com/appwrite/appwrite"><img width="800" height=auto src="https://raw.githubusercontent.com/appwrite/appwrite/master/public/images/github.png" alt="Visit the Appwrite repo"></a>
 
 <h2>Connect With Us 🫂</h2>
 <ul>
