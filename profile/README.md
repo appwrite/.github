@@ -16,7 +16,7 @@
 </ul>
 
 <br />
-<a href="https://github.com/appwrite/appwrite"><img width="800" height=auto src="https://raw.githubusercontent.com/appwrite/appwrite/master/public/images/github.png" alt="Visit the Appwrite repo"></a>
+<a href="https://github.com/appwrite/appwrite"><img height=auto src="https://raw.githubusercontent.com/appwrite/appwrite/master/public/images/github.png" alt="Visit the Appwrite repo"></a>
 
 <h2>Connect With Us 🫂</h2>
 <ul>
