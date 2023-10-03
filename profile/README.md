@@ -25,5 +25,5 @@
     <li>Follow us on <a href="https://twitter.com/appwrite">Twitter</a> 🐤</li>
     <li>Get your open-source project funded via the <a href="https://appwrite.io/oss-fund">Appwrite OSS Fund</a> 💸</li>
     <li>Have your community event sponsored via the <a href="https://dev.to/appwrite/appwrite-announces-pizza-and-swag-fund-200m">Appwrite Pizza and Swag Fund 🍕</li>
-    <li>Apply to Appwrite through the <a href="https://appwrite.io/company/careers">Appwrite Careers page (We're HIRING!)</a> 🧑‍💻</li>
+    <li>Apply to Appwrite through the <a href="https://careers.appwrite.io/">Appwrite Careers page (We're HIRING!)</a> 🧑‍💻</li>
 </ul>
