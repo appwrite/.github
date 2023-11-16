@@ -10,7 +10,7 @@
 
 <ul>
     <li>Learn how to build with Appwrite through the <a href="https://appwrite.io/docs">Appwrite Docs</a> 📚 </li>
-    <li>Find tutorials and blogs on Appwrite's services at the <a href="https://dev.to/appwrite">Appwrite Dev.to blog</a> 📝</li>
+    <li>Find tutorials and blogs on Appwrite's services at the <a href="appwrite.io/blog">Appwrite blog</a> 📝</li>
     <li>View our livestreams and video content at the <a href="https://youtube.com/c/Appwrite">Appwrite YouTube channel</a> 📺</li>
     <li>Discover our community-made projects at the <a href="https://github.com/appwrite/awesome-appwrite">Awesome Appwrite repo</a> 💻</li>
 </ul>
@@ -22,6 +22,6 @@
 <ul>
     <li>Star 🌟 the <a href="https://github.com/appwrite/appwrite/stargazers">main Appwrite repo</a> 🖥️</li>
     <li>Join our <a href="https://appwrite.io/discord?r=orgrepo">Discord community</a> 👨‍👩‍👧‍👦</li>
-    <li>Follow us on <a href="https://twitter.com/appwrite">Twitter</a> 🐤</li>
+    <li>Follow us on <a href="https://x.com/appwrite">X</a> 🐤</li>
     <li>Apply to Appwrite through the <a href="https://appwrite.io/company/careers">Appwrite Careers page (We're HIRING!)</a> 🧑‍💻</li>
 </ul>
