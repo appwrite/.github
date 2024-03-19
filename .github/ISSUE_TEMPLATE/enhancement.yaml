@@ -1,19 +1,19 @@
-name: 🚀 Feature
-description: "Submit a proposal for a new feature"
-title: "🚀 Feature: "
-labels: [feature]
+name: 🚀 Enhancement
+description: "Submit a proposal for a new feature or change"
+title: "🚀 Enhancement: "
+labels: [enhancement]
 body:
   - type: markdown
     attributes:
       value: |
-        Thanks for taking the time to fill out our feature request form 🙏
+        Thanks for taking the time to fill out our form 🙏
   - type: textarea
-    id: feature-description
+    id: enhancement-description
     validations:
       required: true
     attributes:
-      label: "🔖 Feature description"
-      description: "A clear and concise description of what the feature is."
+      label: "🔖 Enhancement description"
+      description: "A clear and concise description of what the enhancement is."
       placeholder: "You should add ..."
   - type: textarea
     id: pitch
@@ -21,13 +21,13 @@ body:
       required: true
     attributes:
       label: "🎤 Pitch"
-      description: "Please explain why this feature should be implemented and how it would be used. Add examples, if applicable."
+      description: "Please explain why this should be implemented and how it would be used. Add examples, if applicable."
       placeholder: "In my use-case, ..."
   - type: checkboxes
     id: no-duplicate-issues
     attributes:
       label: "👀 Have you spent some time to check if this issue has been raised before?"
-      description: "Have you Googled for a similar issue or checked our older issues for a similar feature request?"
+      description: "Have you searched for a similar issue or checked our older issues for a similar request?"
       options:
         - label: "I checked and didn't find similar issue"
           required: true
