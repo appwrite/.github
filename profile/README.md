@@ -12,7 +12,7 @@
     <li>Learn how to build with Appwrite through the <a href="https://appwrite.io/docs">Appwrite Docs</a> 📚 </li>
     <li>Find tutorials and blogs on Appwrite's services at the <a href="https://appwrite.io/blog">Appwrite blog</a> 📝</li>
     <li>View our livestreams and video content at the <a href="https://youtube.com/c/Appwrite">Appwrite YouTube channel</a> 📺</li>
-    <li>Discover our community-made projects at the <a href="https://github.com/appwrite/awesome-appwrite">Awesome Appwrite repo</a> 💻</li>
+    <li>Discover our community-made projects at the <a href="https://github.com/appwrite/awesome-appwrite">Awesome Appwrite repo</a> and the <a href="https://builtwith.appwrite.io/">Built With Appwrite website</a> 💻</li>
 </ul>
 
 <br />
