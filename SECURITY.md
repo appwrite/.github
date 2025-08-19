@@ -72,9 +72,7 @@ Screenshots and detailed logs are appreciated.
 
 ## Recognition
 
-Appwrite currently offers non-monetary recognition.
-
-Discretionary swag bounties may be awarded when budget allows but are not guaranteed.
+Discretionary swag bounties **may** be awarded, but are not guaranteed.
 
 ---
 
