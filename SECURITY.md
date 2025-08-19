@@ -80,7 +80,7 @@ Discretionary swag bounties may be awarded when budget allows but are not guaran
 
 ## Duplicate Handling
 
-First valid report gets credit. Later duplicates are closed as duplicates.
+We will inform if a report is a duplicate and no further action will be taken.
 
 ---
 
