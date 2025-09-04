@@ -1,7 +1,6 @@
 name: 🚀 Enhancement
 description: "Submit a proposal for a new feature or change"
-title: "🚀 Enhancement: "
-labels: [enhancement]
+type: "enhancement"
 body:
   - type: markdown
     attributes:
