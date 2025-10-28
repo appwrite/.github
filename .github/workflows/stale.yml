@@ -65,4 +65,4 @@ jobs:
           close-issue-message: ${{ inputs.close-issue-message }}
           close-issue-reason: ${{ inputs.close-issue-reason }}
           operations-per-run: ${{ inputs.operations-per-run }}
-          only-labels: ${{ inputs.only-labels }} 
+          only-labels: ${{ inputs.only-labels }}

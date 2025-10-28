@@ -15,7 +15,7 @@ name: Mark stale issues
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # Run daily at midnight
+    - cron: "0 0 * * *"  # Run daily at midnight UTC
 
 jobs:
   stale:
@@ -31,7 +31,7 @@ name: Mark stale issues
 
 on:
   schedule:
-    - cron: "0 0 * * *"  # Run daily at midnight
+    - cron: "0 0 * * *"  # Run daily at midnight UTC
 
 jobs:
   stale:
