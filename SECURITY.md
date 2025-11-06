@@ -19,7 +19,7 @@ Appwrite welcomes responsible security research and is committed to keeping our 
 
 ## Contact
 
-We only accept **Email** reports. Please use this address for all vulnerability reports: security@appwrite.io  
+We only accept **email** reports. Please use this address for all vulnerability reports: security@appwrite.io  
 
 Do **not** open public GitHub issues for security problems.
 
