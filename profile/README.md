@@ -15,9 +15,6 @@
     <li>Discover our community-made projects at the <a href="https://github.com/appwrite/awesome-appwrite">Awesome Appwrite repo</a> and the <a href="https://builtwith.appwrite.io/">Built With Appwrite website</a> 💻</li>
 </ul>
 
-<br />
-<a href="https://github.com/appwrite/appwrite"><img height=auto src="https://raw.githubusercontent.com/appwrite/appwrite/master/public/images/github.png" alt="Visit the Appwrite repo"></a>
-
 <h2>Connect With Us 🫂</h2>
 <ul>
     <li>Star 🌟 the <a href="https://github.com/appwrite/appwrite/stargazers">main Appwrite repo</a> 🖥️</li>
