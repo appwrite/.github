@@ -66,20 +66,24 @@ jobs:
             exit 0
           fi
 
-          # Wait for every other check and status on the commit, then require all of them green.
+          # Wait for every other workflow run, check run and status on the commit, then require
+          # all of them green. Runs are listed as soon as they queue, before they create checks.
+          # This job runs on the default branch's commit, so it is not among the runs at $SHA.
           deadline=$((SECONDS + 2400))
           while true; do
+            runs=$(gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/actions/runs?head_sha=$SHA&per_page=100" \
+              | jq '[.[].workflow_runs[] | {name, status, conclusion}]')
             checks=$(gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/commits/$SHA/check-runs?filter=latest&per_page=100" \
-              | jq '[.[].check_runs[] | select(.name | endswith("dependabot-auto-merge") | not)]')
+              | jq '[.[].check_runs[] | select(.name | endswith("dependabot-auto-merge") | not) | {name, status, conclusion}]')
             status=$(gh api "repos/$GITHUB_REPOSITORY/commits/$SHA/status" \
               --jq 'if .total_count == 0 then "success" else .state end')
-            failed=$(jq -r '.[] | select(.status == "completed" and (.conclusion | IN("success", "neutral", "skipped") | not)) | "\(.name): \(.conclusion)"' <<< "$checks")
+            failed=$(jq -rs 'add[] | select(.status == "completed" and (.conclusion | IN("success", "neutral", "skipped") | not)) | "\(.name): \(.conclusion)"' <<< "$runs$checks")
             if [ -n "$failed" ] || [ "$status" = failure ] || [ "$status" = error ]; then
               echo "::notice::#$number did not pass; leaving it for a human."
               printf '%s\n' "$failed" "statuses: $status"
               exit 0
             fi
-            if [ "$(jq '[.[] | select(.status != "completed")] | length' <<< "$checks")" -eq 0 ] && [ "$status" = success ]; then
+            if [ "$(jq -s '[add[] | select(.status != "completed")] | length' <<< "$runs$checks")" -eq 0 ] && [ "$status" = success ]; then
               break
             fi
             if [ "$SECONDS" -ge "$deadline" ]; then
