@@ -1,0 +1,110 @@
+name: Dependabot auto-merge
+
+# Approves and merges a Dependabot patch or minor update once every check run and commit
+# status on its exact head commit has passed. Majors, failures and anything else stay for a
+# human. Call it from a repository workflow that runs on `workflow_run: completed` for each
+# workflow a pull request triggers: that runs from the default branch, so a pull request
+# cannot change what decides to approve it.
+#
+#   on:
+#     workflow_run:
+#       workflows: [CI]
+#       types: [completed]
+#   permissions:
+#     checks: read
+#     contents: write
+#     pull-requests: write
+#     statuses: read
+#   jobs:
+#     dependabot:
+#       uses: appwrite/.github/.github/workflows/dependabot-auto-merge.yml@<sha>
+
+on:
+  workflow_call:
+
+jobs:
+  dependabot-auto-merge:
+    if: >-
+      github.event_name == 'workflow_run' &&
+      github.event.workflow_run.event == 'pull_request' &&
+      github.event.workflow_run.conclusion == 'success' &&
+      github.event.workflow_run.actor.login == 'dependabot[bot]' &&
+      github.event.workflow_run.head_repository.full_name == github.repository &&
+      startsWith(github.event.workflow_run.head_branch, 'dependabot/')
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    # Several workflows finishing for one commit queue up here instead of racing.
+    concurrency:
+      group: dependabot-auto-merge-${{ github.event.workflow_run.head_sha }}
+    env:
+      GH_TOKEN: ${{ github.token }}
+      BASE: ${{ github.event.repository.default_branch }}
+      BRANCH: ${{ github.event.workflow_run.head_branch }}
+      SHA: ${{ github.event.workflow_run.head_sha }}
+    steps:
+      - name: Approve and merge
+        run: |
+          set -euo pipefail
+
+          pr=$(gh api "repos/$GITHUB_REPOSITORY/pulls?state=open&base=$BASE&head=$GITHUB_REPOSITORY_OWNER:$BRANCH" \
+            --jq '[.[] | select(.user.login == "dependabot[bot]" and .head.sha == env.SHA and (.draft | not))]')
+          if [ "$(jq length <<< "$pr")" -ne 1 ]; then
+            echo "No open Dependabot pull request at $SHA."
+            exit 0
+          fi
+          number=$(jq -r '.[0].number' <<< "$pr")
+
+          # Dependabot lists every dependency it changed in the commit message.
+          types=$(gh api "repos/$GITHUB_REPOSITORY/commits/$SHA" --jq .commit.message | awk '
+            /^updated-dependencies:/ { inside = 1; next }
+            inside && /^\.\.\./ { inside = 0 }
+            inside && /^- dependency-name:/ { count++; types[count] = "none" }
+            inside && /^  update-type:/ { types[count] = $2 }
+            END { for (i = 1; i <= count; i++) print types[i] }')
+          if [ -z "$types" ] || grep -qvxE 'version-update:semver-(patch|minor)' <<< "$types"; then
+            echo "::notice::#$number has a major or untyped update; leaving it for a human."
+            exit 0
+          fi
+
+          # Wait for every other workflow run, check run and status on the commit, then require
+          # all of them green. Runs are listed as soon as they queue, before they create checks.
+          # This job runs on the default branch's commit, so it is not among the runs at $SHA.
+          deadline=$((SECONDS + 2400))
+          while true; do
+            runs=$(gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/actions/runs?head_sha=$SHA&per_page=100" \
+              | jq '[.[].workflow_runs[] | {name, status, conclusion}]')
+            checks=$(gh api --paginate --slurp "repos/$GITHUB_REPOSITORY/commits/$SHA/check-runs?filter=latest&per_page=100" \
+              | jq '[.[].check_runs[] | select(.name | endswith("dependabot-auto-merge") | not) | {name, status, conclusion}]')
+            status=$(gh api "repos/$GITHUB_REPOSITORY/commits/$SHA/status" \
+              --jq 'if .total_count == 0 then "success" else .state end')
+            failed=$(jq -rs 'add[] | select(.status == "completed" and (.conclusion | IN("success", "neutral", "skipped") | not)) | "\(.name): \(.conclusion)"' <<< "$runs$checks")
+            if [ -n "$failed" ] || [ "$status" = failure ] || [ "$status" = error ]; then
+              echo "::notice::#$number did not pass; leaving it for a human."
+              printf '%s\n' "$failed" "statuses: $status"
+              exit 0
+            fi
+            if [ "$(jq -s '[add[] | select(.status != "completed")] | length' <<< "$runs$checks")" -eq 0 ] && [ "$status" = success ]; then
+              break
+            fi
+            if [ "$SECONDS" -ge "$deadline" ]; then
+              echo "::error::Timed out waiting for checks on #$number."
+              exit 1
+            fi
+            sleep 30
+          done
+          if [ "$(jq '[.[] | select(.conclusion == "success")] | length' <<< "$checks")" -eq 0 ]; then
+            echo "::notice::Nothing tested #$number; leaving it for a human."
+            exit 0
+          fi
+
+          approved=$(gh api "repos/$GITHUB_REPOSITORY/pulls/$number/reviews?per_page=100" \
+            --jq 'any(.[]; .user.login == "github-actions[bot]" and .state == "APPROVED" and .commit_id == env.SHA)')
+          if [ "$approved" != true ]; then
+            gh api -X POST "repos/$GITHUB_REPOSITORY/pulls/$number/reviews" \
+              -f commit_id="$SHA" -f event=APPROVE -f body="Every check passed on $SHA." > /dev/null
+          fi
+
+          method=$(gh api "repos/$GITHUB_REPOSITORY" \
+            --jq 'if .allow_squash_merge then "squash" elif .allow_merge_commit then "merge" else "rebase" end')
+          # Every check has already passed, so merge now rather than through GitHub's auto-merge.
+          gh pr merge "$number" --repo "$GITHUB_REPOSITORY" "--$method" --match-head-commit "$SHA"
