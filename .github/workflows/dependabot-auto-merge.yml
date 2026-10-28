@@ -11,6 +11,7 @@ name: Dependabot auto-merge
 #       workflows: [CI]
 #       types: [completed]
 #   permissions:
+#     actions: read
 #     checks: read
 #     contents: write
 #     pull-requests: write
