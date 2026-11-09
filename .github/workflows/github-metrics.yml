@@ -47,7 +47,7 @@ jobs:
     needs: get_dates
     steps:
       - name: Run issue-metrics tool for issues opened last month
-        uses: github/issue-metrics@v2
+        uses: github/issue-metrics@6c119f875ddd30d3f79409b55c3295cd01f4dfec # v2
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           SEARCH_QUERY: 'org:appwrite org:open-runtimes org:utopia-php is:issue created:${{ needs.get_dates.outputs.last_month }}'
@@ -55,27 +55,27 @@ jobs:
   
       - id: create_issue
         name: Create issue
-        uses: peter-evans/create-issue-from-file@v4
+        uses: peter-evans/create-issue-from-file@433e51abf769039ee20ba1293a088ca19d573b7f # v4
         with:
           title: Issues Opened in ${{ needs.get_dates.outputs.report_month }}
           content-filepath: ./issue_metrics.md
 
       - id: comment_issue
         name: Prepare JSON comment
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@23ff15729ef2fc348714a3bb66d2f655ca9066f2 # v3
         with:
           issue-number: ${{ steps.create_issue.outputs.issue-number }}
           body: "```json"
   
       - name: Attach JSON
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@23ff15729ef2fc348714a3bb66d2f655ca9066f2 # v3
         with:
           comment-id: ${{ steps.comment_issue.outputs.comment-id }}
           body-path: ./issue_metrics.json
           edit-mode: append
   
       - name: Finish JSON comment
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@23ff15729ef2fc348714a3bb66d2f655ca9066f2 # v3
         with:
           comment-id: ${{ steps.comment_issue.outputs.comment-id }}
           body: "```"
@@ -87,7 +87,7 @@ jobs:
     needs: get_dates
     steps:
       - name: Run issue-metrics tool for issues closed last month
-        uses: github/issue-metrics@v2
+        uses: github/issue-metrics@6c119f875ddd30d3f79409b55c3295cd01f4dfec # v2
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           SEARCH_QUERY: 'org:appwrite org:open-runtimes org:utopia-php is:issue closed:${{ needs.get_dates.outputs.last_month }}'
@@ -95,27 +95,27 @@ jobs:
   
       - id: create_issue
         name: Create issue
-        uses: peter-evans/create-issue-from-file@v4
+        uses: peter-evans/create-issue-from-file@433e51abf769039ee20ba1293a088ca19d573b7f # v4
         with:
           title: Issues Closed in ${{ needs.get_dates.outputs.report_month }}
           content-filepath: ./issue_metrics.md
 
       - id: comment_issue
         name: Prepare JSON comment
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@23ff15729ef2fc348714a3bb66d2f655ca9066f2 # v3
         with:
           issue-number: ${{ steps.create_issue.outputs.issue-number }}
           body: "```json"
   
       - name: Attach JSON
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@23ff15729ef2fc348714a3bb66d2f655ca9066f2 # v3
         with:
           comment-id: ${{ steps.comment_issue.outputs.comment-id }}
           body-path: ./issue_metrics.json
           edit-mode: append
   
       - name: Finish JSON comment
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@23ff15729ef2fc348714a3bb66d2f655ca9066f2 # v3
         with:
           comment-id: ${{ steps.comment_issue.outputs.comment-id }}
           body: "```"
@@ -128,7 +128,7 @@ jobs:
     needs: get_dates
     steps:
       - name: Run issue-metrics tool for PRs opened last month
-        uses: github/issue-metrics@v2
+        uses: github/issue-metrics@6c119f875ddd30d3f79409b55c3295cd01f4dfec # v2
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           SEARCH_QUERY: 'org:appwrite org:open-runtimes org:utopia-php is:pull-request created:${{ needs.get_dates.outputs.last_month }}'
@@ -136,27 +136,27 @@ jobs:
   
       - id: create_issue
         name: Create issue
-        uses: peter-evans/create-issue-from-file@v4
+        uses: peter-evans/create-issue-from-file@433e51abf769039ee20ba1293a088ca19d573b7f # v4
         with:
           title: PRs Opened in ${{ needs.get_dates.outputs.report_month }}
           content-filepath: ./issue_metrics.md
 
       - id: comment_issue
         name: Prepare JSON comment
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@23ff15729ef2fc348714a3bb66d2f655ca9066f2 # v3
         with:
           issue-number: ${{ steps.create_issue.outputs.issue-number }}
           body: "```json"
   
       - name: Attach JSON
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@23ff15729ef2fc348714a3bb66d2f655ca9066f2 # v3
         with:
           comment-id: ${{ steps.comment_issue.outputs.comment-id }}
           body-path: ./issue_metrics.json
           edit-mode: append
   
       - name: Finish JSON comment
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@23ff15729ef2fc348714a3bb66d2f655ca9066f2 # v3
         with:
           comment-id: ${{ steps.comment_issue.outputs.comment-id }}
           body: "```"
@@ -168,7 +168,7 @@ jobs:
     needs: get_dates
     steps:      
       - name: Run issue-metrics tool for PRs closed last month
-        uses: github/issue-metrics@v2
+        uses: github/issue-metrics@6c119f875ddd30d3f79409b55c3295cd01f4dfec # v2
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           SEARCH_QUERY: 'org:appwrite org:open-runtimes org:utopia-php is:pull-request closed:${{ needs.get_dates.outputs.last_month }}'
@@ -176,27 +176,27 @@ jobs:
   
       - id: create_issue
         name: Create issue
-        uses: peter-evans/create-issue-from-file@v4
+        uses: peter-evans/create-issue-from-file@433e51abf769039ee20ba1293a088ca19d573b7f # v4
         with:
           title: PRs Closed in ${{ needs.get_dates.outputs.report_month }}
           content-filepath: ./issue_metrics.md
 
       - id: comment_issue
         name: Prepare JSON comment
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@23ff15729ef2fc348714a3bb66d2f655ca9066f2 # v3
         with:
           issue-number: ${{ steps.create_issue.outputs.issue-number }}
           body: "```json"
   
       - name: Attach JSON
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@23ff15729ef2fc348714a3bb66d2f655ca9066f2 # v3
         with:
           comment-id: ${{ steps.comment_issue.outputs.comment-id }}
           body-path: ./issue_metrics.json
           edit-mode: append
   
       - name: Finish JSON comment
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@23ff15729ef2fc348714a3bb66d2f655ca9066f2 # v3
         with:
           comment-id: ${{ steps.comment_issue.outputs.comment-id }}
           body: "```"
@@ -209,34 +209,34 @@ jobs:
     needs: get_dates
     steps:
       - name: Run issue-metrics tool for discussions opened last month
-        uses: github/issue-metrics@v2
+        uses: github/issue-metrics@6c119f875ddd30d3f79409b55c3295cd01f4dfec # v2
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           SEARCH_QUERY: 'org:appwrite org:open-runtimes org:utopia-php type:discussions created:${{ needs.get_dates.outputs.last_month }}'
   
       - id: create_issue
         name: Create issue
-        uses: peter-evans/create-issue-from-file@v4
+        uses: peter-evans/create-issue-from-file@433e51abf769039ee20ba1293a088ca19d573b7f # v4
         with:
           title: Discussions Opened in ${{ needs.get_dates.outputs.report_month }}
           content-filepath: ./issue_metrics.md
 
       - id: comment_issue
         name: Prepare JSON comment
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@23ff15729ef2fc348714a3bb66d2f655ca9066f2 # v3
         with:
           issue-number: ${{ steps.create_issue.outputs.issue-number }}
           body: "```json"
   
       - name: Attach JSON
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@23ff15729ef2fc348714a3bb66d2f655ca9066f2 # v3
         with:
           comment-id: ${{ steps.comment_issue.outputs.comment-id }}
           body-path: ./issue_metrics.json
           edit-mode: append
   
       - name: Finish JSON comment
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@23ff15729ef2fc348714a3bb66d2f655ca9066f2 # v3
         with:
           comment-id: ${{ steps.comment_issue.outputs.comment-id }}
           body: "```"
@@ -248,34 +248,34 @@ jobs:
     needs: get_dates
     steps:         
       - name: Run issue-metrics tool for discussions closed last month
-        uses: github/issue-metrics@v2
+        uses: github/issue-metrics@6c119f875ddd30d3f79409b55c3295cd01f4dfec # v2
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           SEARCH_QUERY: 'org:appwrite org:open-runtimes org:utopia-php type:discussions closed:${{ needs.get_dates.outputs.last_month }}'
   
       - id: create_issue
         name: Create issue
-        uses: peter-evans/create-issue-from-file@v4
+        uses: peter-evans/create-issue-from-file@433e51abf769039ee20ba1293a088ca19d573b7f # v4
         with:
           title: Discussions Closed in ${{ needs.get_dates.outputs.report_month }}
           content-filepath: ./issue_metrics.md
 
       - id: comment_issue
         name: Prepare JSON comment
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@23ff15729ef2fc348714a3bb66d2f655ca9066f2 # v3
         with:
           issue-number: ${{ steps.create_issue.outputs.issue-number }}
           body: "```json"
   
       - name: Attach JSON
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@23ff15729ef2fc348714a3bb66d2f655ca9066f2 # v3
         with:
           comment-id: ${{ steps.comment_issue.outputs.comment-id }}
           body-path: ./issue_metrics.json
           edit-mode: append
   
       - name: Finish JSON comment
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@23ff15729ef2fc348714a3bb66d2f655ca9066f2 # v3
         with:
           comment-id: ${{ steps.comment_issue.outputs.comment-id }}
           body: "```"
