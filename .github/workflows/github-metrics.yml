@@ -47,7 +47,7 @@ jobs:
     needs: get_dates
     steps:
       - name: Run issue-metrics tool for issues opened last month
-        uses: github/issue-metrics@v2
+        uses: github/issue-metrics@671528652402b9b8a33da44b5c693b3161bc090f # v5
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           SEARCH_QUERY: 'org:appwrite org:open-runtimes org:utopia-php is:issue created:${{ needs.get_dates.outputs.last_month }}'
@@ -87,7 +87,7 @@ jobs:
     needs: get_dates
     steps:
       - name: Run issue-metrics tool for issues closed last month
-        uses: github/issue-metrics@v2
+        uses: github/issue-metrics@671528652402b9b8a33da44b5c693b3161bc090f # v5
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           SEARCH_QUERY: 'org:appwrite org:open-runtimes org:utopia-php is:issue closed:${{ needs.get_dates.outputs.last_month }}'
@@ -128,7 +128,7 @@ jobs:
     needs: get_dates
     steps:
       - name: Run issue-metrics tool for PRs opened last month
-        uses: github/issue-metrics@v2
+        uses: github/issue-metrics@671528652402b9b8a33da44b5c693b3161bc090f # v5
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           SEARCH_QUERY: 'org:appwrite org:open-runtimes org:utopia-php is:pull-request created:${{ needs.get_dates.outputs.last_month }}'
@@ -168,7 +168,7 @@ jobs:
     needs: get_dates
     steps:      
       - name: Run issue-metrics tool for PRs closed last month
-        uses: github/issue-metrics@v2
+        uses: github/issue-metrics@671528652402b9b8a33da44b5c693b3161bc090f # v5
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           SEARCH_QUERY: 'org:appwrite org:open-runtimes org:utopia-php is:pull-request closed:${{ needs.get_dates.outputs.last_month }}'
@@ -209,7 +209,7 @@ jobs:
     needs: get_dates
     steps:
       - name: Run issue-metrics tool for discussions opened last month
-        uses: github/issue-metrics@v2
+        uses: github/issue-metrics@671528652402b9b8a33da44b5c693b3161bc090f # v5
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           SEARCH_QUERY: 'org:appwrite org:open-runtimes org:utopia-php type:discussions created:${{ needs.get_dates.outputs.last_month }}'
@@ -248,7 +248,7 @@ jobs:
     needs: get_dates
     steps:         
       - name: Run issue-metrics tool for discussions closed last month
-        uses: github/issue-metrics@v2
+        uses: github/issue-metrics@671528652402b9b8a33da44b5c693b3161bc090f # v5
         env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
           SEARCH_QUERY: 'org:appwrite org:open-runtimes org:utopia-php type:discussions closed:${{ needs.get_dates.outputs.last_month }}'
