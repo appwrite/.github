@@ -55,7 +55,7 @@ jobs:
   
       - id: create_issue
         name: Create issue
-        uses: peter-evans/create-issue-from-file@v4
+        uses: peter-evans/create-issue-from-file@fca9117c27cdc29c6c4db3b86c48e4115a786710 # v6
         with:
           title: Issues Opened in ${{ needs.get_dates.outputs.report_month }}
           content-filepath: ./issue_metrics.md
@@ -95,7 +95,7 @@ jobs:
   
       - id: create_issue
         name: Create issue
-        uses: peter-evans/create-issue-from-file@v4
+        uses: peter-evans/create-issue-from-file@fca9117c27cdc29c6c4db3b86c48e4115a786710 # v6
         with:
           title: Issues Closed in ${{ needs.get_dates.outputs.report_month }}
           content-filepath: ./issue_metrics.md
@@ -136,7 +136,7 @@ jobs:
   
       - id: create_issue
         name: Create issue
-        uses: peter-evans/create-issue-from-file@v4
+        uses: peter-evans/create-issue-from-file@fca9117c27cdc29c6c4db3b86c48e4115a786710 # v6
         with:
           title: PRs Opened in ${{ needs.get_dates.outputs.report_month }}
           content-filepath: ./issue_metrics.md
@@ -176,7 +176,7 @@ jobs:
   
       - id: create_issue
         name: Create issue
-        uses: peter-evans/create-issue-from-file@v4
+        uses: peter-evans/create-issue-from-file@fca9117c27cdc29c6c4db3b86c48e4115a786710 # v6
         with:
           title: PRs Closed in ${{ needs.get_dates.outputs.report_month }}
           content-filepath: ./issue_metrics.md
@@ -216,7 +216,7 @@ jobs:
   
       - id: create_issue
         name: Create issue
-        uses: peter-evans/create-issue-from-file@v4
+        uses: peter-evans/create-issue-from-file@fca9117c27cdc29c6c4db3b86c48e4115a786710 # v6
         with:
           title: Discussions Opened in ${{ needs.get_dates.outputs.report_month }}
           content-filepath: ./issue_metrics.md
@@ -255,7 +255,7 @@ jobs:
   
       - id: create_issue
         name: Create issue
-        uses: peter-evans/create-issue-from-file@v4
+        uses: peter-evans/create-issue-from-file@fca9117c27cdc29c6c4db3b86c48e4115a786710 # v6
         with:
           title: Discussions Closed in ${{ needs.get_dates.outputs.report_month }}
           content-filepath: ./issue_metrics.md
