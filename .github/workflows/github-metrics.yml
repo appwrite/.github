@@ -62,20 +62,20 @@ jobs:
 
       - id: comment_issue
         name: Prepare JSON comment
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@e8674b075228eee787fea43ef493e45ece1004c9 # v5
         with:
           issue-number: ${{ steps.create_issue.outputs.issue-number }}
           body: "```json"
   
       - name: Attach JSON
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@e8674b075228eee787fea43ef493e45ece1004c9 # v5
         with:
           comment-id: ${{ steps.comment_issue.outputs.comment-id }}
           body-path: ./issue_metrics.json
           edit-mode: append
   
       - name: Finish JSON comment
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@e8674b075228eee787fea43ef493e45ece1004c9 # v5
         with:
           comment-id: ${{ steps.comment_issue.outputs.comment-id }}
           body: "```"
@@ -102,20 +102,20 @@ jobs:
 
       - id: comment_issue
         name: Prepare JSON comment
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@e8674b075228eee787fea43ef493e45ece1004c9 # v5
         with:
           issue-number: ${{ steps.create_issue.outputs.issue-number }}
           body: "```json"
   
       - name: Attach JSON
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@e8674b075228eee787fea43ef493e45ece1004c9 # v5
         with:
           comment-id: ${{ steps.comment_issue.outputs.comment-id }}
           body-path: ./issue_metrics.json
           edit-mode: append
   
       - name: Finish JSON comment
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@e8674b075228eee787fea43ef493e45ece1004c9 # v5
         with:
           comment-id: ${{ steps.comment_issue.outputs.comment-id }}
           body: "```"
@@ -143,20 +143,20 @@ jobs:
 
       - id: comment_issue
         name: Prepare JSON comment
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@e8674b075228eee787fea43ef493e45ece1004c9 # v5
         with:
           issue-number: ${{ steps.create_issue.outputs.issue-number }}
           body: "```json"
   
       - name: Attach JSON
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@e8674b075228eee787fea43ef493e45ece1004c9 # v5
         with:
           comment-id: ${{ steps.comment_issue.outputs.comment-id }}
           body-path: ./issue_metrics.json
           edit-mode: append
   
       - name: Finish JSON comment
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@e8674b075228eee787fea43ef493e45ece1004c9 # v5
         with:
           comment-id: ${{ steps.comment_issue.outputs.comment-id }}
           body: "```"
@@ -183,20 +183,20 @@ jobs:
 
       - id: comment_issue
         name: Prepare JSON comment
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@e8674b075228eee787fea43ef493e45ece1004c9 # v5
         with:
           issue-number: ${{ steps.create_issue.outputs.issue-number }}
           body: "```json"
   
       - name: Attach JSON
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@e8674b075228eee787fea43ef493e45ece1004c9 # v5
         with:
           comment-id: ${{ steps.comment_issue.outputs.comment-id }}
           body-path: ./issue_metrics.json
           edit-mode: append
   
       - name: Finish JSON comment
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@e8674b075228eee787fea43ef493e45ece1004c9 # v5
         with:
           comment-id: ${{ steps.comment_issue.outputs.comment-id }}
           body: "```"
@@ -223,20 +223,20 @@ jobs:
 
       - id: comment_issue
         name: Prepare JSON comment
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@e8674b075228eee787fea43ef493e45ece1004c9 # v5
         with:
           issue-number: ${{ steps.create_issue.outputs.issue-number }}
           body: "```json"
   
       - name: Attach JSON
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@e8674b075228eee787fea43ef493e45ece1004c9 # v5
         with:
           comment-id: ${{ steps.comment_issue.outputs.comment-id }}
           body-path: ./issue_metrics.json
           edit-mode: append
   
       - name: Finish JSON comment
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@e8674b075228eee787fea43ef493e45ece1004c9 # v5
         with:
           comment-id: ${{ steps.comment_issue.outputs.comment-id }}
           body: "```"
@@ -262,20 +262,20 @@ jobs:
 
       - id: comment_issue
         name: Prepare JSON comment
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@e8674b075228eee787fea43ef493e45ece1004c9 # v5
         with:
           issue-number: ${{ steps.create_issue.outputs.issue-number }}
           body: "```json"
   
       - name: Attach JSON
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@e8674b075228eee787fea43ef493e45ece1004c9 # v5
         with:
           comment-id: ${{ steps.comment_issue.outputs.comment-id }}
           body-path: ./issue_metrics.json
           edit-mode: append
   
       - name: Finish JSON comment
-        uses: peter-evans/create-or-update-comment@v3
+        uses: peter-evans/create-or-update-comment@e8674b075228eee787fea43ef493e45ece1004c9 # v5
         with:
           comment-id: ${{ steps.comment_issue.outputs.comment-id }}
           body: "```"
